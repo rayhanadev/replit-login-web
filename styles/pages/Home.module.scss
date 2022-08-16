@@ -1,0 +1,57 @@
+@use '../abstracts/fonts';
+
+.page {
+	background: var(--background-3);
+	border: 1px solid var(--background-1);
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	padding: 32px;
+	width: 450px;
+	height: fit-content;
+
+	h1 {
+		font-size: 48px;
+		line-height: 36px;
+		@include fonts.render('display', 'medium');
+		text-shadow: 2px 2px 60px var(--accent-3);
+		text-align: center;
+		margin-bottom: 0;
+	}
+
+	@media only screen and (max-width: 768px) {
+		h1 {
+			font-size: 36px;
+			line-height: 36px;
+		}
+	}
+
+	@media only screen and (max-width: 400px) {
+		h1 {
+			font-size: 28px;
+			line-height: 28px;
+		}
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 22px;
+		@include fonts.render('body', 'regular');
+	}
+
+	.hint {
+		color: var(--primary-1);
+		margin-bottom: 0;
+	}
+
+	a {
+		text-decoration: none;
+		color: var(--accent-2);
+
+		&:hover {
+			text-decoration: underline;
+			text-underline-offset: 2px;
+		}
+	}
+}

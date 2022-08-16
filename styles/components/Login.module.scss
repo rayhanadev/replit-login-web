@@ -1,0 +1,111 @@
+@use '../abstracts/fonts';
+
+.login {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	text-align: left;
+
+	label {
+		margin-top: 16px;
+		color: var(--primary-2);
+		@include fonts.render('body', 'regular');
+		font-size: 14px;
+	}
+
+	input[type='text'],
+	input[type='password'],
+	input[type='email'],
+	input[type='number'],
+	input[type='search'],
+	input[type='tel'],
+	input[type='url'] {
+		outline: none;
+		margin: 4px 0;
+		padding: 8px;
+		border: 1px solid var(--outline-1);
+		color: var(--primary-2);
+		border-radius: 4px;
+		background-color: var(--background-2);
+		resize: vertical;
+		appearance: textfield;
+		width: 100%;
+		background-color: var(--background-2);
+		border-radius: 8px;
+		transition-property: border-color, box-shadow;
+		transition-duration: 120ms;
+		transition-timing-function: ease-out;
+		@include fonts.render('body', 'regular');
+		font-size: 14px;
+		height: 32px;
+		line-height: 22px;
+
+		&:hover {
+			border-color: var(--outline-3);
+		}
+
+		&:active {
+			border-color: var(--accent-3);
+			background-color: var(--background-1) !important;
+			transition: none;
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 2px var(--accent-3);
+			transition-property: box-shadow;
+			transition-duration: 120ms;
+			transition-timing-function: ease-out;
+		}
+	}
+
+	button {
+		transition-property: border-color, box-shadow;
+		transition-duration: 120ms;
+		transition-timing-function: ease-out;
+		border: 1px solid transparent;
+		padding: 8px;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		@include fonts.render('body', 'medium');
+		font-size: 14px;
+		justify-content: center;
+		border-radius: 8px;
+		cursor: pointer;
+		text-decoration: none !important;
+		color: var(--primary-3);
+		height: 32px;
+
+		background: var(--accent-4);
+
+		&:hover {
+			border: 1px solid var(--accent-2);
+		}
+
+		&:active {
+			background: var(--accent-5);
+			border: 1px solid var(--accent-3);
+			transition: none;
+		}
+	}
+
+	button svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	.formSubmit {
+		margin-top: 16px;
+		text-align: center;
+	}
+
+	::-webkit-outer-spin-button,
+	::-webkit-inner-spin-button,
+	::-webkit-search-cancel-button {
+		display: none;
+	}
+
+	::placeholder {
+		color: var(--foreground-1);
+	}
+}

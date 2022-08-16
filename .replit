@@ -1,0 +1,37 @@
+run = "yarn dev"
+entrypoint = "pages/index.js"
+
+hidden = [".config", ".next"]
+
+[env]
+XDG_CONFIG_HOME = "/home/runner/.config"
+PATH = "/home/runner/$REPL_SLUG/.config/bin:$PATH"
+npm_config_prefix = "/home/runner/$REPL_SLUG/.config/"
+
+[nix]
+channel = "stable-22_05"
+
+[packager]
+language = "nodejs"
+
+	[packager.features]
+	packageSearch = false
+	guessImports = false
+
+[languages.mdx]
+pattern = "**/*.mdx"
+syntax = "markdown"
+
+[languages.javascript]
+pattern = "**/{*.js,*.jsx,*.ts,*.tsx}"
+syntax = "javascript"
+
+	[languages.javascript.languageServer]
+	start = [ "typescript-language-server", "--stdio" ]
+
+[languages.graphql]
+pattern = "**/{*.graphql,*.gql}"
+syntax = "graphql"
+
+	[languages.graphql.languageServer]
+	start = [ "graphql-lsp", "server", "-m", "stream", "-c", "graphql.config.json" ]

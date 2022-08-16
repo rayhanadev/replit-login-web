@@ -1,0 +1,96 @@
+/*
+ * Modified Version of this Gist:
+ * https://gist.github.com/fabricelejeune/bcdd3d4725d4e4cea672
+ */
+
+/* Font Definitions */
+
+$font-display: 'IBM Plex Sans', sans-serif;
+$font-body: 'IBM Plex Sans', sans-serif;
+$font-monospace: 'Victor Mono', 'Fira Code', monospace;
+
+/* Font Variants */
+
+$variants-display: (
+	'regular': (
+		family: $font-display,
+		weight: 400,
+		style: normal,
+	),
+	'medium': (
+		family: $font-display,
+		weight: 500,
+		style: normal,
+	),
+	'bold': (
+		family: $font-display,
+		weight: 600,
+		style: normal,
+	),
+);
+
+$variants-body: (
+	'regular': (
+		family: $font-body,
+		weight: 400,
+		style: normal,
+	),
+	'medium': (
+		family: $font-body,
+		weight: 500,
+		style: normal,
+	),
+	'bold': (
+		family: $font-body,
+		weight: 600,
+		style: normal,
+	),
+);
+
+$variants-monospace: (
+	'regular': (
+		family: $font-monospace,
+		weight: 400,
+		style: normal,
+	),
+	'medium': (
+		family: $font-monospace,
+		weight: 500,
+		style: normal,
+	),
+	'bold': (
+		family: $font-monospace,
+		weight: 600,
+		style: normal,
+	),
+);
+
+/* Font Stack */
+
+$font-stack: (
+	'display': $variants-display,
+	'body': $variants-body,
+	'monospaced': $variants-monospace,
+);
+
+/*
+ * Font Mixin
+ * @include render(display, bold)
+ */
+
+@mixin render(
+	$group,
+	$variant,
+	$properties: family weight style,
+	$font-stack: $font-stack
+) {
+	$font-properties: map-get($font-stack, $group, $variant);
+
+	@if $font-properties {
+		@each $property, $values in $font-properties {
+			@if contains($properties, $property) {
+				font-#{$property}: map-get($font-properties, $property);
+			}
+		}
+	}
+}

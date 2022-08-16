@@ -1,0 +1,60 @@
+@use '../abstracts/fonts';
+
+.manager {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	text-align: left;
+
+	button {
+		transition-property: border-color, box-shadow;
+		transition-duration: 120ms;
+		transition-timing-function: ease-out;
+		border: 1px solid transparent;
+		padding: 8px;
+		display: flex;
+		align-items: center;
+		@include fonts.render('body', 'medium');
+		font-size: 14px;
+		justify-content: center;
+		border-radius: 8px;
+		cursor: pointer;
+		text-decoration: none !important;
+		color: var(--primary-3);
+		height: 32px;
+		margin: 8px 0;
+
+		background: var(--accent-4);
+
+		&:hover {
+			border: 1px solid var(--accent-2);
+		}
+
+		&:active {
+			background: var(--accent-5);
+			border: 1px solid var(--accent-3);
+			transition: none;
+		}
+	}
+
+	.newTokenBtn {
+		background: var(--background-2);
+
+		&:hover {
+			border: 1px solid var(--outline-2);
+		}
+
+		&:active {
+			background: var(--outline-5);
+			border: 1px solid var(--background-3);
+			transition: none;
+		}
+	}
+}
+
+.error {
+	width: 100%;
+	white-space: pre-wrap;
+	overflow-x: hidden;
+	line-height: 25px;
+}

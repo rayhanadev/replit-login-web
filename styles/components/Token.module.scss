@@ -1,0 +1,311 @@
+@use '../abstracts/fonts';
+
+.token {
+	background: var(--background-2);
+	border: 1px solid var(--background-1);
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 16px;
+	height: fit-content;
+	margin: 8px 0;
+
+	.websites {
+		color: var(--primary-1);
+		position: relative;
+		
+		.trashIcon {
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			
+			stroke: var(--accent-red-3);
+
+			&:hover {
+				stroke: var(--accent-red-2);
+			}
+
+			&:active {
+				stroke: var(--accent-red-1);
+			}
+		}
+	}
+
+	ul {
+		margin-left: 32px;
+	}
+
+	.top {
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+
+		.radio {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-self: flex-end;
+			justify-self: stretch;
+			gap: 0;
+			position: relative;
+
+			input[type='radio'] {
+				transition-property: border-color, box-shadow;
+				transition-duration: 120ms;
+				transition-timing-function: ease-out;
+				background-color: var(--background-5);
+				border-width: 1px;
+				border-style: solid;
+				appearance: none;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				cursor: pointer;
+				outline-offset: 4px;
+				border-color: var(--outline-2);
+				outline: none;
+				box-shadow: none;
+
+				&:active,
+				&:focus-visible {
+					background-color: var(--background-1);
+					border-color: var(--accent-3);
+				}
+			}
+
+			.checked {
+				-webkit-box-align: stretch;
+				align-items: stretch;
+				border-width: 0px;
+				border-style: solid;
+				box-sizing: border-box;
+				display: flex;
+				flex-basis: auto;
+				flex-direction: column;
+				flex-shrink: 0;
+				outline: none;
+				min-height: 0px;
+				min-width: 0px;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				position: absolute;
+				pointer-events: none;
+				background-color: var(--accent-3);
+			}
+		}
+	}
+}
+
+.tokenSelected {
+	background: var(--background-1);
+	border: 1px solid var(--outline-2);
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 16px;
+	height: fit-content;
+	margin: 8px 0;
+
+	.websites {
+		color: var(--primary-1);
+		position: relative;
+		
+		.trashIcon {
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			
+			stroke: var(--accent-red-3);
+
+			&:hover {
+				stroke: var(--accent-red-2);
+			}
+
+			&:active {
+				stroke: var(--accent-red-1);
+			}
+		}
+	}
+
+	ul {
+		margin-left: 32px;
+	}
+
+	.top {
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+
+		.radio {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			align-self: flex-end;
+			justify-self: stretch;
+			gap: 0;
+			position: relative;
+
+			input[type='radio'] {
+				transition-property: border-color, box-shadow;
+				transition-duration: 120ms;
+				transition-timing-function: ease-out;
+				background-color: var(--background-2);
+				border-width: 1px;
+				border-style: solid;
+				appearance: none;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				cursor: pointer;
+				outline-offset: 4px;
+				border-color: var(--outline-3);
+				outline: none;
+				box-shadow: none;
+
+				&:active,
+				&:focus-visible {
+					background-color: var(--background-1);
+					border-color: var(--accent-3);
+				}
+			}
+
+			.checked {
+				-webkit-box-align: stretch;
+				align-items: stretch;
+				border-width: 0px;
+				border-style: solid;
+				box-sizing: border-box;
+				display: flex;
+				flex-basis: auto;
+				flex-direction: column;
+				flex-shrink: 0;
+				outline: none;
+				min-height: 0px;
+				min-width: 0px;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				position: absolute;
+				pointer-events: none;
+				background-color: var(--accent-3);
+			}
+		}
+	}
+}
+
+.tokenEditor {
+	background: var(--background-2);
+	border: 1px solid var(--background-1);
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 16px;
+	height: fit-content;
+	margin: 16px 0;
+
+	label {
+		margin-top: 16px;
+		color: var(--primary-2);
+		@include fonts.render('body', 'regular');
+		font-size: 14px;
+	}
+
+	input[type='text'],
+	input[type='password'],
+	input[type='email'],
+	input[type='number'],
+	input[type='search'],
+	input[type='tel'],
+	input[type='url'] {
+		outline: none;
+		margin: 4px 0;
+		padding: 8px;
+		border: 1px solid var(--outline-1);
+		color: var(--primary-2);
+		border-radius: 4px;
+		background-color: var(--background-2);
+		resize: vertical;
+		appearance: textfield;
+		width: 100%;
+		background-color: var(--background-2);
+		border-radius: 8px;
+		transition-property: border-color, box-shadow;
+		transition-duration: 120ms;
+		transition-timing-function: ease-out;
+		@include fonts.render('body', 'regular');
+		font-size: 14px;
+		height: 32px;
+		line-height: 22px;
+
+		&:hover {
+			border-color: var(--outline-3);
+		}
+
+		&:active {
+			border-color: var(--accent-3);
+			background-color: var(--background-1) !important;
+			transition: none;
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 2px var(--accent-3);
+			transition-property: box-shadow;
+			transition-duration: 120ms;
+			transition-timing-function: ease-out;
+		}
+	}
+
+	button {
+		transition-property: border-color, box-shadow;
+		transition-duration: 120ms;
+		transition-timing-function: ease-out;
+		border: 1px solid transparent;
+		padding: 8px;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		@include fonts.render('body', 'medium');
+		font-size: 14px;
+		justify-content: center;
+		border-radius: 8px;
+		cursor: pointer;
+		text-decoration: none !important;
+		color: var(--primary-3);
+		height: 32px;
+
+		background: var(--accent-4);
+
+		&:hover {
+			border: 1px solid var(--accent-2);
+		}
+
+		&:active {
+			background: var(--accent-5);
+			border: 1px solid var(--accent-3);
+			transition: none;
+		}
+	}
+
+	.formSubmit {
+		margin-top: 16px;
+		text-align: center;
+	}
+
+	::-webkit-outer-spin-button,
+	::-webkit-inner-spin-button,
+	::-webkit-search-cancel-button {
+		display: none;
+	}
+
+	::placeholder {
+		color: var(--foreground-1);
+	}
+}
